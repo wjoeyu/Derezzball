@@ -1,10 +1,16 @@
 body {
 	background-color: black;
-  width: 50%;
-  height: 50%;
 }
 
-canvas {
+.game-screen {
+  position: absolute;
+  top: 0px;
+  width: 88%;
+  height: 88%;
+  margin: auto;
+}
+
+/* canvas {
   width: 50%;
   height: 50%;
-}
+} */
