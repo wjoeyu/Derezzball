@@ -16,7 +16,7 @@ In addition, this project will include:
 
 This app will consist of a single screen. Their are no on screen controls besides a a button to start the game. It should be intuitive enough where a player will see they control the digital paddle on mouseover that their paddle will be controlled with their mouse movements.
 
-![wireframes](https://github.com/wjoeyu/Derezzball/blob/master/Derezzball.png)
+![wireframes](https://github.com/wjoeyu/Derezzball/blob/master/wireframes/Derezzball.png)
 
 ### Architecture and Technologies
 
