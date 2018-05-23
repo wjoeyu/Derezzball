@@ -23,8 +23,7 @@ This app will consist of a single screen. Their are no on screen controls beside
 This project will be implemented with the following technologies:
 
 - `Javascript` for game logic
-- `Canvas` for rendering
-- `Three.js` for 3d-rendering
+- `Three.js` for 3d-rendering an calculations
 
 In addition to the entry file, there will be three scripts involved in the project:
 
