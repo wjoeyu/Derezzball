@@ -33,14 +33,17 @@ In addition to the entry file, there will be three scripts involved in the proje
 
 ### Implementation Timeline
 
-** Day 1 ** : Set up all necessary Node modules, including getting webpack up and running. Goals for the day:
+** Day 1:
+Set up all necessary Node modules, including getting webpack up and running. Goals for the day:
 - Learn Three.js
 - Render a cube on the page.
 
-** Day 2-3 ** : Dedicate this day fully to Three.js.
+** Day 2-3:
+Dedicate this day fully to Three.js.
 - Render a ball with physics in the 3d cube.
 
-** Day 3-4 ** : Create the players
+** Day 3-4:
+Create the players
 - Create AI player logic in `Rinzler.js`.
 - Create User paddle.
 
