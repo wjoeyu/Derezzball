@@ -16,16 +16,16 @@ renderer.setClearColor( 0x000000, 0 );
 // const light = new THREE.PointLight( 0xd1f2ff, 1 , 100);
 // l
 
-scene.add( ball );
+scene.add( cube );
 
 camera.position.z = 5;
 
 function animate() {
 	requestAnimationFrame( animate );
 
-  // cube.rotation.x += 5;
+  cube.rotation.x += .02;
   // cube.rotation.y += .02;
-  ball.rotation.x -= .02;
+  // ball.rotation.x += .02;
 	renderer.render( scene, camera );
 }
 
