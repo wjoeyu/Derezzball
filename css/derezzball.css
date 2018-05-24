@@ -1,16 +1,38 @@
 body {
-	background-color: black;
+	/* background-color: black; */
+  background-image: url("../images/derezzball_bg_3.png");
+  background-size: cover;
+  background-position: center;
+}
+
+html {
+  height: 100vh;
 }
 
 .game-screen {
-  position: absolute;
-  top: 0px;
-  width: 88%;
-  height: 88%;
-  margin: auto;
+  width: 60%;
+  height: 60%;
 }
 
-/* canvas {
-  width: 50%;
-  height: 50%;
-} */
+canvas {
+  top: 24px;
+  width: 888px;
+  height: 888px;
+  margin: 0 auto;
+  display: block;
+  border: 2px solid yellow;
+  box-shadow: inset 0px 0px 24px yellow;
+}
+
+.title {
+  display: block;
+  font-family: 'open sans', sans-serif;
+  font-size: 48px;
+  color: #161622;
+  text-shadow: -2px 2px yellow;
+  margin: 24px auto;
+  text-align: center;
+  flex-shrink: 0;
+  width: 500px;
+  min-width: 500px;
+}
