@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { cube, backPlane, leftPlane, rightPlane, topPlane, bottomPlane } from './gamecube';
 import { ball } from './ball';
 import { pointLight } from './light';
-import { disc } from "./disc";
+import { disc, discController } from "./disc";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, 1 , 0.1, 1000 );
@@ -19,24 +19,22 @@ renderer.setClearColor( 0x000000, 0 );
 // pointLight.distance = 10000;
 // scene.add( pointLight );
 
-let ballDirX = 1;
-let ballDirY = 1;
-let ballDirZ = 1;
-let ballSpeed = 2;
-
 scene.add( disc );
 scene.add( cube );
 scene.add( ball );
 scene.add( backPlane);
 
-cube.position.z = 0;
-// paddle.position.y=
-// paddle.position.x = 1.38;
-// paddle.position.y = 1.38;
+cube.position.z = -250;
 disc.position.z = 0;
 
 ball.position.z = 0;
 ball.position.x = 0;
+
+let ballDirectionX = 1;
+let ballDirectionY = 1;
+let ballDirectionZ = 1;
+let ballSpeed = 2;
+
 camera.position.z = 500 ;
 
 document.addEventListener("mousemove", discController, false);
@@ -44,27 +42,17 @@ document.addEventListener("mousemove", discController, false);
 function animate() {
 	requestAnimationFrame( animate );
 
-  disc.rotation.z +=.24;
-  // cube.rotation.y += .02;
-  ball.rotation.y += .02;
-	ball.rotation.x += .02;
-  // ball.position.z += -.001;
+  // ball.position.x += ballDirectionX * ballSpeed;
+  // ball.position.y += ballDirectionY * ballSpeed;
+  // ball.position.z += ballDirectionZ * ballSpeed;
+
+  disc.rotation.z += 0.24;
+  ball.rotation.y += 0.02;
+	ball.rotation.x += 0.02;
+  // ball.position.z += 2;
 	renderer.render( scene, camera );
 }
 
-function discController (e) {
-  const canvas = document.getElementsByTagName("canvas")[0];
-  let relativeX = e.clientX - canvas.offsetLeft-350;
-  if(relativeX > -canvas.width/2 && relativeX < canvas.width/2) {
-        disc.position.x = relativeX;
-    }
-  let relativeY = e.clientY-canvas.offsetTop-350;
-  if(relativeY > -canvas.height/2 && relativeY < canvas.height/2) {
-        disc.position.y = -(relativeY);
-    }
-}
-
 animate();
-
 
 document.body.appendChild(renderer.domElement);
