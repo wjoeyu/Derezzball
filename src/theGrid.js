@@ -54,12 +54,12 @@ function animate() {
 
 function discController (e) {
   const canvas = document.getElementsByTagName("canvas")[0];
-  let relativeX = e.clientX - canvas.offsetLeft;
+  let relativeX = e.clientX - canvas.offsetLeft-350;
   if(relativeX > -canvas.width/2 && relativeX < canvas.width/2) {
         disc.position.x = relativeX;
     }
-  let relativeY = e.clientY-200;
-  if(relativeY > -canvas.height/2 && relativeY < canvas.height) {
+  let relativeY = e.clientY-canvas.offsetTop-350;
+  if(relativeY > -canvas.height/2 && relativeY < canvas.height/2) {
         disc.position.y = -(relativeY);
     }
 }
