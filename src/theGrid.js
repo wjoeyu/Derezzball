@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { cube, backPlane, leftPlane, rightPlane, topPlane, bottomPlane } from './gamecube';
+import { cube } from './gamecube';
 import { ball } from './ball';
 import { pointLight } from './light';
 import { disc, discController } from "./disc";
@@ -22,7 +22,6 @@ renderer.setClearColor( 0x000000, 0 );
 scene.add( disc );
 scene.add( cube );
 scene.add( ball );
-scene.add( backPlane);
 
 cube.position.z = -250;
 disc.position.z = 0;
