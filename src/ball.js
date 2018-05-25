@@ -1,5 +1,9 @@
 import * as THREE from 'three';
 
-const geometry = new THREE.SphereGeometry( 5, 32, 32 );
-const material = new THREE.MeshBasicMaterial( {color: 0xb9eaf6} );
-export const ball = new THREE.Mesh( geometry, material );
+const sphereGeometry = new THREE.SphereGeometry( .4, 16, 16 );
+const material = new THREE.MeshLambertMaterial( {color: 0xb9eaf6} );
+const wireframe_material = new THREE.MeshBasicMaterial( { color: 0xb9eaf6, wireframe: true } );
+
+export const ball = new THREE.Mesh( sphereGeometry, wireframe_material);
+
+// yellow 0xe9ef2d
