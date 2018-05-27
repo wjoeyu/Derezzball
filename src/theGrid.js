@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { cube } from './gamecube';
-import { ball, ballTracker } from './ball';
+import { ball, ballTracker, ballLose } from './ball';
 import { pointLight } from './light';
 import { disc, discController } from "./disc";
 
@@ -50,27 +50,6 @@ if (ballDirectionX > ballSpeed * 4) {
 	ballDirectionX = -ballSpeed * 4;
 }
 
-// collision
-
-// if (ball.position.y <= -333){
-//     ballDirectionY = -ballDirectionY;
-// }
-// if (ball.position.y >= 333){
-//     ballDirectionY = -ballDirectionY;
-// }
-// if (ball.position.x <= -333){
-//     ballDirectionX = -ballDirectionX;
-// }
-// if (ball.position.x >= 333){
-//     ballDirectionX = -ballDirectionX;
-// }
-// if (ball.position.z <= 0){
-//     ballDirectionZ = -ballDirectionZ;
-// }
-// if (ball.position.z >= -250){
-//     ballDirectionZ = -ballDirectionZ;
-// }
-
 document.addEventListener("mousemove", discController, false);
 
 function animate() {
@@ -101,23 +80,26 @@ function animate() {
 	    ballDirectionZ = -ballDirectionZ;
 	}
 	if (ball.position.z >= 0 && (
-      ball.position.y >= disc.position.y - 50
-      && ball.position.y <= disc.position.y + 50
+      ball.position.y >= disc.position.y - 89
+      && ball.position.y <= disc.position.y + 89
     ) && (
-      ball.position.x >= disc.position.x - 50
-      && ball.position.x <= disc.position.x + 50
+      ball.position.x >= disc.position.x - 89
+      && ball.position.x <= disc.position.x + 89
     )) {
 	    ballDirectionZ = -ballDirectionZ;
 	}
 
   if (ball.position.z > 0) {
-    // ball.position.z = 0;
-    // const stopX = ball.position.x;
-    // const stopY = ball.position.y;
     ballSpeed = 0;
+    ballLose.position.z = 0;
+    ballLose.position.x = ball.position.x;
+    ballLose.position.y = ball.position.y;
+    scene.remove( ball );
+    scene.add( ballLose);
+    ballLose.rotation.y -= 0.02;
+  	ballLose.rotation.x -= 0.02;
 
   }
-
 
 	renderer.render( scene, camera );
 }
