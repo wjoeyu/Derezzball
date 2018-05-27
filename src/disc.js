@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-const discWidth = 99;
+const discWidth = 100;
 
 
 const geometry = new THREE.TorusGeometry( discWidth/2 , 12, 8, 16 );
