@@ -1,12 +1,13 @@
 body {
 	/* background-color: black; */
   background-image: url("../images/derezzball_bg_3.png");
-  background-size: cover;
-  background-position: top;
+  background-size: auto;
+  background-position: center;
 }
 
 html {
   height: 100vh;
+  overflow: hidden;
 }
 
 .game-screen {
