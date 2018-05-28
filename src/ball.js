@@ -4,8 +4,8 @@ import { disc, rinzler } from './disc';
 const sphereGeometry = new THREE.SphereGeometry( 40, 16, 16 );
 const material = new THREE.MeshLambertMaterial( {color: 0xb9eaf6} );
 const wireframe_material = new THREE.MeshBasicMaterial( { color: 0xb9eaf6, wireframe: true } );
-const win_material = new THREE.MeshBasicMaterial( { color: 0xffff00, wireframe: true } );
-const lose_material = new THREE.MeshBasicMaterial( { color: 0xff6922, wireframe: true } );
+const win_material = new THREE.MeshBasicMaterial( { color: 0x00d424, wireframe: true } );
+const lose_material = new THREE.MeshBasicMaterial( { color: 0xff0d00, wireframe: true } );
 
 
 
