@@ -44,10 +44,18 @@ if (ballDirectionX > ballSpeed * 6) {
 }
 
 export const launchBall = () => {
-   ballDirectionX = Math.random() * (4.01) - 2;
-   ballDirectionY = Math.random() * (4.01) - 2;
-   ballDirectionZ = 1;
-   ballSpeed = 6;
+  if (ball.position.z === 0
+    && ball.position.x === 0
+    && ball.position.y === 0) {
+     ballDirectionX = Math.random() * (4.01) - 2;
+     ballDirectionY = Math.random() * (4.01) - 2;
+     ballDirectionZ = 1;
+     ballSpeed = 6;
+   } else if (ball.position.z === 6 || ball.position.z === -510) {
+     ball.position.z = 0;
+     ball.position.x = 0;
+     ball.position.y = 0;
+   }
 }
 
 export const ballPhysics = () => {

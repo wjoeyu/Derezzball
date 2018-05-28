@@ -27,7 +27,12 @@ ballTracker.position.x = -333;
 ballTracker.position.y = -333;
 
 document.addEventListener("mousemove", discController, false);
-document.addEventListener("click", () => launchBall());
+document.addEventListener("click", () => {
+  scene.remove(ballLose);
+  scene.remove(ballWin);
+  scene.add(ball);
+  launchBall();
+});
 
 function animate() {
 	requestAnimationFrame( animate );
