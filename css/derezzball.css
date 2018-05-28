@@ -41,9 +41,9 @@ canvas {
 .joey {
   font-family: 'open sans', sans-serif;
   text-align: center;
-  margin-top: -4px;
-  font-size: 24px;
-  color: yellow;
-  text-shadow: 0px 0px 8px #b9ecff;
-  transform: translateX(240px);
+  margin-top: 0px;
+  font-size: 18px;
+  color: #b9ecff;
+  text-shadow: 0px 0px 8px #0081b1;
+  transform: translateX(267px);
 }
