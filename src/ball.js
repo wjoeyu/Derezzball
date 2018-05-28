@@ -55,6 +55,10 @@ export const launchBall = () => {
      ball.position.z = 0;
      ball.position.x = 0;
      ball.position.y = 0;
+   } else if (ball.position.z <= -2 && ball.position.z > -24) {
+     ballDirectionX = Math.random() * (4.01) - 2;
+     ballDirectionY = Math.random() * (4.01) - 2;
+     ballDirectionZ = 1;
    }
 }
 
@@ -108,6 +112,7 @@ export const ballPhysics = () => {
   }
 
   if (ball.position.z < -504) {
+    console.log(ball.position.z)
     ballSpeed = 0;
     ballWin.position.z = -500;
     ballWin.position.x = ball.position.x;
