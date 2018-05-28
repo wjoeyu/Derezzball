@@ -2,7 +2,7 @@ body {
 	/* background-color: black; */
   background-image: url("../images/derezzball_bg_3.png");
   background-size: auto;
-  background-position: center;
+  background-position: bottom;
 }
 
 html {
@@ -36,4 +36,14 @@ canvas {
   flex-shrink: 0;
   width: 500px;
   min-width: 500px;
+}
+
+.joey {
+  font-family: 'open sans', sans-serif;
+  text-align: center;
+  margin-top: -4px;
+  font-size: 24px;
+  color: yellow;
+  text-shadow: 0px 0px 8px #b9ecff;
+  transform: translateX(240px);
 }

@@ -68,3 +68,7 @@ function animate() {
 animate();
 
 document.body.appendChild(renderer.domElement);
+const joey = document.createElement('div');
+joey.innerHTML = "created by Joey Wu";
+joey.classList.add('joey');
+document.body.appendChild(joey);
