@@ -1,17 +1,14 @@
 import * as THREE from 'three';
 import { cube } from './gamecube';
-import { ball, ballTracker, ballLose, ballWin, ballPhysics } from './ball';
+import { ball, ballTracker, ballLose, ballWin, ballPhysics, launchBall } from './ball';
 import { disc, discController, rinzler, rinzlerAI } from "./disc";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, 1 , 0.1, 1000 );
 const renderer = new THREE.WebGLRenderer( {alpha : true});
 
-// renderer.sortObjects = false;
 renderer.setSize( 700, 700 );
 renderer.setClearColor( 0x000000, 0 );
-
-// scene.add( pointLight );
 
 scene.add( disc, cube, ball, ballTracker, rinzler );
 
@@ -30,10 +27,7 @@ ballTracker.position.x = -333;
 ballTracker.position.y = -333;
 
 document.addEventListener("mousemove", discController, false);
-
-function start() {
-  animate();
-}
+document.addEventListener("click", () => launchBall());
 
 function animate() {
 	requestAnimationFrame( animate );

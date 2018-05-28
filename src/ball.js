@@ -26,10 +26,10 @@ square.faces.push(new THREE.Face3(0, 3, 2));
 
 export const ballTracker = new THREE.Line(square, new THREE.LineBasicMaterial({ color: 0xffffff, opacity: 0.5 }));
 
-let ballDirectionX = .5;
-let ballDirectionY = 1;
-let ballDirectionZ = 1;
-let ballSpeed = 6;
+let ballDirectionX = 0;
+let ballDirectionY = 0;
+let ballDirectionZ = 0;
+let ballSpeed = 0;
 
 if (ballDirectionY > ballSpeed * 6) {
   ballDirectionY = ballSpeed * 6;
@@ -41,6 +41,13 @@ if (ballDirectionX > ballSpeed * 6) {
 	ballDirectionX = ballSpeed * 6;
 } else if (ballDirectionX < -ballSpeed * 6) {
 	ballDirectionX = -ballSpeed * 6;
+}
+
+export const launchBall = () => {
+   ballDirectionX = Math.random() * (4.01) - 2;
+   ballDirectionY = Math.random() * (4.01) - 2;
+   ballDirectionZ = 1;
+   ballSpeed = 6;
 }
 
 export const ballPhysics = () => {
