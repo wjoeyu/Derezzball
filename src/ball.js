@@ -24,7 +24,7 @@ square.vertices.push(new THREE.Vector3(0, 0, 0));
 square.faces.push(new THREE.Face3(0, 1, 2));
 square.faces.push(new THREE.Face3(0, 3, 2));
 
-export const ballTracker = new THREE.Line(square, new THREE.LineBasicMaterial({ color: 0xffffff, opacity: 0.5 }));
+export const ballTracker = new THREE.Line(square, new THREE.LineBasicMaterial({ color: 0xffff00, opacity: 0.5 }));
 
 let ballDirectionX = 0;
 let ballDirectionY = 0;
@@ -44,9 +44,9 @@ if (ballDirectionX > ballSpeed * 6) {
 }
 
 export const launchBall = () => {
-  if (ball.position.z === 0
-    && ball.position.x === 0
-    && ball.position.y === 0) {
+  if (ball.position.z === 0 &&
+    ball.position.x === 0 &&
+    ball.position.y === 0) {
      ballDirectionX = Math.random() * (4.01) - 2;
      ballDirectionY = Math.random() * (4.01) - 2;
      ballDirectionZ = 1;
@@ -60,7 +60,7 @@ export const launchBall = () => {
      ballDirectionY = Math.random() * (4.01) - 2;
      ballDirectionZ = 1;
    }
-}
+};
 
 export const ballPhysics = () => {
   ball.rotation.y += 0.02;
@@ -85,21 +85,21 @@ export const ballPhysics = () => {
 	}
 
 	if (ball.position.z === 0 && (
-      ball.position.y >= disc.position.y - 89
-      && ball.position.y <= disc.position.y + 89
+      ball.position.y >= disc.position.y - 89 &&
+      ball.position.y <= disc.position.y + 89
     ) && (
-      ball.position.x >= disc.position.x - 89
-      && ball.position.x <= disc.position.x + 89
+      ball.position.x >= disc.position.x - 89 &&
+      ball.position.x <= disc.position.x + 89
     )) {
 	    ballDirectionZ = -ballDirectionZ;
 	}
 
 	if (ball.position.z <= -500 && (
-      ball.position.y >= rinzler.position.y - 89
-      && ball.position.y <= rinzler.position.y + 89
+      ball.position.y >= rinzler.position.y - 89 &&
+      ball.position.y <= rinzler.position.y + 89
     ) && (
-      ball.position.x >= rinzler.position.x - 89
-      && ball.position.x <= rinzler.position.x + 89
+      ball.position.x >= rinzler.position.x - 89 &&
+      ball.position.x <= rinzler.position.x + 89
     )) {
 	    ballDirectionZ = -ballDirectionZ;
 	}
@@ -112,7 +112,6 @@ export const ballPhysics = () => {
   }
 
   if (ball.position.z < -504) {
-    console.log(ball.position.z)
     ballSpeed = 0;
     ballWin.position.z = -500;
     ballWin.position.x = ball.position.x;
