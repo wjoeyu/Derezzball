@@ -27,12 +27,12 @@ ballTracker.position.x = -333;
 ballTracker.position.y = -333;
 
 document.addEventListener("mousemove", discController, false);
-document.addEventListener("click", () => {
-  scene.remove(ballLose);
-  scene.remove(ballWin);
-  scene.add(ball);
-  launchBall();
-});
+// document.addEventListener("click", () => {
+//   scene.remove(ballLose);
+//   scene.remove(ballWin);
+//   scene.add(ball);
+//   launchBall();
+// });
 
 function animate() {
 	requestAnimationFrame( animate );
@@ -68,6 +68,12 @@ animate();
 
 document.body.appendChild(renderer.domElement);
 const screen = document.getElementsByTagName('canvas')[0];
+screen.addEventListener("click", () => {
+  scene.remove(ballLose);
+  scene.remove(ballWin);
+  scene.add(ball);
+  launchBall();
+});
 const joey = document.createElement('div');
 joey.innerHTML = "created by &nbsp;Joey Wu";
 joey.classList.add('joey');

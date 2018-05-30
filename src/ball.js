@@ -51,13 +51,14 @@ export const launchBall = () => {
      ballDirectionY = Math.random() * (4.01) - 2;
      ballDirectionZ = 1;
      ballSpeed = 6;
-   } else if (ball.position.z === 6 || ball.position.z === -510) {
+   } else if (ball.position.z >= 1 || ball.position.z <= -500) {
      ball.position.z = 0;
      ball.position.x = 0;
      ball.position.y = 0;
    } else if (ball.position.z <= -2 && ball.position.z > -24) {
      ballDirectionX = Math.random() * (4.01) - 2;
      ballDirectionY = Math.random() * (4.01) - 2;
+     ballSpeed += 1;
      ballDirectionZ = 1;
    }
 };
@@ -105,6 +106,7 @@ export const ballPhysics = () => {
 	}
 
   if (ball.position.z > 0) {
+    console.log(ball.position.z);
     ballSpeed = 0;
     ballLose.position.z = 0;
     ballLose.position.x = ball.position.x;
@@ -112,10 +114,11 @@ export const ballPhysics = () => {
   }
 
   if (ball.position.z < -504) {
+    console.log(ball.position.z);
     ballSpeed = 0;
     ballWin.position.z = -500;
     ballWin.position.x = ball.position.x;
     ballWin.position.y = ball.position.y;
   }
 
-}
+};
