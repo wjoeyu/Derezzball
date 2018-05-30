@@ -75,5 +75,5 @@ screen.addEventListener("click", () => {
 });
 const joey = document.createElement('div');
 joey.classList.add('joey');
-joey.innerHTML = "created by &nbsp;Joey Wu";
+joey.innerHTML = "created by Joey Wu";
 document.body.appendChild(joey);
