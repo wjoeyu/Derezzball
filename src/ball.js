@@ -59,6 +59,7 @@ export const launchBall = () => {
      ballDirectionX = Math.random() * (4.01) - 2;
      ballDirectionY = Math.random() * (4.01) - 2;
      ballDirectionZ = 1;
+     console.log("DEREZZBALL!");
    }
 };
 
@@ -99,7 +100,7 @@ export const ballPhysics = () => {
     Math.sqrt((
       Math.pow((disc.position.x-ball.position.x),2) +
       Math.pow((disc.position.y-ball.position.y),2)
-    )) < 12
+    )) < 24
     ) && (
       ballDirectionZ === 1 && ballSpeed !== 0
     )) {
@@ -134,5 +135,73 @@ export const ballPhysics = () => {
     ballWin.position.x = ball.position.x;
     ballWin.position.y = ball.position.y;
   }
+
+  // Ball deflection logic
+  if (ball.position.z === 0 && (
+    Math.sqrt((
+      Math.pow((disc.position.x-ball.position.x),2) +
+      Math.pow((disc.position.y-ball.position.y),2)
+    )) < 90 && (
+      Math.sqrt((
+      Math.pow((disc.position.x-ball.position.x),2) +
+      Math.pow((disc.position.y-ball.position.y),2)
+    )) >= 66
+    )
+    )) {
+      if (ball.position.x > disc.position.x && ball.position.y > disc.position.y) {
+        if (ballDirectionX < 0) {
+          ballDirectionX = -ballDirectionX * 2.2;
+        } else {
+          ballDirectionX = ballDirectionX * 2.2;
+        }
+        if (ballDirectionY < 0) {
+          ballDirectionY = -ballDirectionY * 2.2;
+        } else {
+          ballDirectionY = ballDirectionY * 2.2;
+        }
+        console.log("SHARP TOP RIGHT!");
+      }
+      if (ball.position.x > disc.position.x && ball.position.y < disc.position.y) {
+        if (ballDirectionX < 0) {
+          ballDirectionX = -ballDirectionX * 2.2;
+        } else {
+          ballDirectionX = ballDirectionX * 2.2;
+        }
+        if (ballDirectionY < 0) {
+          ballDirectionY = ballDirectionY * 2.2;
+        } else {
+          ballDirectionY = -ballDirectionY * 2.2;
+        }
+        console.log("SHARP BOTTOM RIGHT!");
+      }
+      if (ball.position.x < disc.position.x && ball.position.y > disc.position.y) {
+        if (ballDirectionX < 0) {
+          ballDirectionX = ballDirectionX * 2.2;
+        } else {
+          ballDirectionX = -ballDirectionX * 2.2;
+        }
+        if (ballDirectionY < 0) {
+          ballDirectionY = -ballDirectionY * 2.2;
+        } else {
+          ballDirectionY = ballDirectionY * 2.2;
+        }
+        console.log("SHARP TOP LEFT!");
+
+      }
+      if (ball.position.x < disc.position.x && ball.position.y < disc.position.y) {
+        if (ballDirectionX < 0) {
+          ballDirectionX = ballDirectionX * 2.2;
+        } else {
+          ballDirectionX = -ballDirectionX * 2.2;
+        }
+        if (ballDirectionY < 0) {
+          ballDirectionY = ballDirectionY * 2.2;
+        } else {
+          ballDirectionY = -ballDirectionY * 2.2;
+        }
+        console.log("SHARP BOTTOM LEFT!");
+
+      }
+    }
 
 };

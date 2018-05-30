@@ -172,3 +172,56 @@ canvas {
   color: #b9ecff;
   text-shadow: 0px 0px 4px #0081b1;
 }
+
+#derezzball {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+  color: orange;
+  position: absolute;
+  width: auto;
+  border: 1px solid red;
+  text-align: center;
+  /* visibility: hidden; */
+}
+#speedup {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+  color: orange;
+  position: absolute;
+  width: auto;
+  border: 1px solid red;
+  text-align: center;
+  /* visibility: hidden; */
+}
+#sharp {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+  color: orange;
+  position: absolute;
+  width: auto;
+  border: 1px solid red;
+  text-align: center;
+  /* visibility: hidden; */
+}
+#crazy {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+  color: orange;
+  position: absolute;
+  width: 320px;
+  border: 1px solid red;
+  text-align: center;
+  /* visibility: hidden; */
+}
+
+#derezzed {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+  color: orange;
+  position: absolute;
+  width: 380px;
+  border: 1px solid red;
+  text-align: center;
+  left: 0px;
+  /* visibility: hidden; */
+}

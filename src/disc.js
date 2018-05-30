@@ -29,7 +29,7 @@ export const discController = (e) => {
 
 export const rinzlerAI = () => {
   let rinzlerDirectionX = 0, rinzlerDirectionY = 0;
-  let rinzlerSpeed = 8;
+  let rinzlerSpeed = 8.8;
 
   rinzlerDirectionY = (ball.position.y - rinzler.position.y);
   rinzlerDirectionX = (ball.position.x - rinzler.position.x);
