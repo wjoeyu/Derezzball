@@ -1,8 +1,7 @@
 body {
-	/* background-color: white; */
   background-image: url("../images/derezzball_bg_3.png");
-  background-size: auto;
-  background-position: bottom;
+  background-size: cover;
+  background-position: 50%;
 }
 
 html {
@@ -26,7 +25,7 @@ canvas {
   text-shadow: -2px 2px yellow;
   text-align: center;
   width: 500px;
-  min-width: 500px;
+  min-width: 450px;
   margin: 24px auto;
   animation: shadow 2s;
   -webkit-animation-name: shadow;
@@ -164,12 +163,13 @@ canvas {
 }
 
 .joey {
-  width: auto;
   font-family: 'Press Start 2P', cursive;
   text-align: center;
-  margin-top: 14px;
+  width: 421px;
+  min-width: 421px;
+  margin: 14px auto;
   font-size: 12px;
   color: #b9ecff;
   text-shadow: 0px 0px 4px #0081b1;
-  transform: translateX(-18px);
+  transform: translateX(-20px);
 }

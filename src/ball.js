@@ -93,8 +93,6 @@ export const ballPhysics = () => {
     )
     )) {
 	    ballDirectionZ = -ballDirectionZ;
-      disc.scale.set(1.1,1.1,1.1);
-      // setTimeout(disc.scale.set(1,1,1), 50);
 	}
 
   if (ball.position.z === 0 && (
