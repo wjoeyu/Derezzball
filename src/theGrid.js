@@ -27,12 +27,6 @@ ballTracker.position.x = -333;
 ballTracker.position.y = -333;
 
 document.addEventListener("mousemove", discController, false);
-// document.addEventListener("click", () => {
-//   scene.remove(ballLose);
-//   scene.remove(ballWin);
-//   scene.add(ball);
-//   launchBall();
-// });
 
 function animate() {
 	requestAnimationFrame( animate );
@@ -52,7 +46,12 @@ function animate() {
     ballLose.rotation.y -= 0.02;
     ballLose.rotation.x -= 0.02;
   }
-  else if (ball.position.z < -504) {
+  else if (ball.position.z < -500 && (
+    Math.sqrt((
+      Math.pow((rinzler.position.x-ball.position.x),2) +
+      Math.pow((rinzler.position.y-ball.position.y),2)
+    )) >= 90
+    )) {
     ballWin.position.z = -500;
     ballWin.position.x = ball.position.x;
     ballWin.position.y = ball.position.y;

@@ -47,18 +47,17 @@ export const launchBall = () => {
   if (ball.position.z === 0 &&
     ball.position.x === 0 &&
     ball.position.y === 0) {
-     ballDirectionX = Math.random() * (4.01) - 2;
-     ballDirectionY = Math.random() * (4.01) - 2;
+     ballDirectionX = Math.random() * (2.1) - 1;
+     ballDirectionY = Math.random() * (2.1) - 1;
      ballDirectionZ = 1;
      ballSpeed = 6;
-   } else if (ball.position.z >= 1 || ball.position.z <= -500) {
+   } else if (ball.position.z > 0 || ball.position.z <= -500) {
      ball.position.z = 0;
      ball.position.x = 0;
      ball.position.y = 0;
    } else if (ball.position.z <= -2 && ball.position.z > -24) {
      ballDirectionX = Math.random() * (4.01) - 2;
      ballDirectionY = Math.random() * (4.01) - 2;
-     ballSpeed += 1;
      ballDirectionZ = 1;
    }
 };
@@ -86,35 +85,48 @@ export const ballPhysics = () => {
 	}
 
 	if (ball.position.z === 0 && (
-      ball.position.y >= disc.position.y - 89 &&
-      ball.position.y <= disc.position.y + 89
-    ) && (
-      ball.position.x >= disc.position.x - 89 &&
-      ball.position.x <= disc.position.x + 89
+    Math.sqrt((
+      Math.pow((disc.position.x-ball.position.x),2) +
+      Math.pow((disc.position.y-ball.position.y),2)
+    )) < 90
     )) {
 	    ballDirectionZ = -ballDirectionZ;
 	}
 
-	if (ball.position.z <= -500 && (
-      ball.position.y >= rinzler.position.y - 89 &&
-      ball.position.y <= rinzler.position.y + 89
+  if (ball.position.z === 0 && (
+    Math.sqrt((
+      Math.pow((disc.position.x-ball.position.x),2) +
+      Math.pow((disc.position.y-ball.position.y),2)
+    )) < 12
     ) && (
-      ball.position.x >= rinzler.position.x - 89 &&
-      ball.position.x <= rinzler.position.x + 89
+      ballDirectionZ === 1 && ballSpeed !== 0
+    )) {
+      ballSpeed += 1;
+      console.log(`speedup to ${ballSpeed}!`);
+  }
+
+	if (ball.position.z <= -500 && (
+    Math.sqrt((
+      Math.pow((rinzler.position.x-ball.position.x),2) +
+      Math.pow((rinzler.position.y-ball.position.y),2)
+    )) < 90
     )) {
 	    ballDirectionZ = -ballDirectionZ;
 	}
 
   if (ball.position.z > 0) {
-    console.log(ball.position.z);
     ballSpeed = 0;
     ballLose.position.z = 0;
     ballLose.position.x = ball.position.x;
     ballLose.position.y = ball.position.y;
   }
 
-  if (ball.position.z < -504) {
-    console.log(ball.position.z);
+  if (ball.position.z < -500 && (
+    Math.sqrt((
+      Math.pow((rinzler.position.x-ball.position.x),2) +
+      Math.pow((rinzler.position.y-ball.position.y),2)
+    )) >= 90
+    )) {
     ballSpeed = 0;
     ballWin.position.z = -500;
     ballWin.position.x = ball.position.x;
