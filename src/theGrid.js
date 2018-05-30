@@ -64,10 +64,10 @@ function animate() {
 	renderer.render( scene, camera );
 }
 
-// document.addEventListener('click', () => start());
 animate();
 
 document.body.appendChild(renderer.domElement);
+const screen = document.getElementsByTagName('canvas')[0];
 const joey = document.createElement('div');
 joey.innerHTML = "created by Joey Wu";
 joey.classList.add('joey');
