@@ -69,6 +69,6 @@ animate();
 document.body.appendChild(renderer.domElement);
 const screen = document.getElementsByTagName('canvas')[0];
 const joey = document.createElement('div');
-joey.innerHTML = "created by Joey Wu";
+joey.innerHTML = "created by &nbsp;Joey Wu";
 joey.classList.add('joey');
 document.body.appendChild(joey);

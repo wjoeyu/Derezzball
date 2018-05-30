@@ -165,11 +165,11 @@ canvas {
 
 .joey {
   width: auto;
-  font-family: 'open sans', sans-serif;
+  font-family: 'Press Start 2P', cursive;
   text-align: center;
-  margin-top: 0px;
-  font-size: 18px;
+  margin-top: 14px;
+  font-size: 12px;
   color: #b9ecff;
-  text-shadow: 0px 0px 8px #0081b1;
-  transform: translateX(267px);
+  text-shadow: 0px 0px 4px #0081b1;
+  transform: translateX(-18px);
 }
