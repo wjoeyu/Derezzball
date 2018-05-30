@@ -88,9 +88,13 @@ export const ballPhysics = () => {
     Math.sqrt((
       Math.pow((disc.position.x-ball.position.x),2) +
       Math.pow((disc.position.y-ball.position.y),2)
-    )) < 90
+    )) < 90 && (
+      ballSpeed !== 0
+    )
     )) {
 	    ballDirectionZ = -ballDirectionZ;
+      disc.scale.set(1.1,1.1,1.1);
+      // setTimeout(disc.scale.set(1,1,1), 50);
 	}
 
   if (ball.position.z === 0 && (
