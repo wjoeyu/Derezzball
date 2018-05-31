@@ -15,12 +15,11 @@ scene.add( disc, cube, ball, ballTracker, rinzler );
 disc.position.z = 0;
 rinzler.position.z = -500;
 rinzler.position.x = 0;
-rinzler.position.y = 0;
 cube.position.z = -250;
 
 ball.position.z = 0;
-ball.position.x = 0;
-camera.position.z = 500 ;
+ball.position.y = 0;
+camera.position.z = 500;
 
 ballTracker.position.z = 0;
 ballTracker.position.x = -333;
@@ -67,7 +66,9 @@ animate();
 
 document.body.appendChild(renderer.domElement);
 const screen = document.getElementsByTagName('canvas')[0];
+
 screen.addEventListener("click", () => {
+  document.getElementById('click-to-start').style.visibility = "hidden";
   scene.remove(ballLose);
   scene.remove(ballWin);
   scene.add(ball);

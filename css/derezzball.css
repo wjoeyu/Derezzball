@@ -35,7 +35,7 @@ canvas {
 }
 
 @-webkit-keyframes shadow {
-    0%    { text-shadow:  2px  2px #cbecf5;}
+    0%    { text-shadow:  2px  2px #cbecf5; }
     25%   { text-shadow: -2px -2px yellow;  }
     75%   { text-shadow:  2px -2px #cbecf5; }
     100%  { text-shadow: -2px  2px yellow;  }
@@ -110,8 +110,9 @@ canvas {
 
 @-webkit-keyframes slide-down-glow-1 {
   0%   { transform: translate(0%, -888%);  }
-  0%   { color: transparent;               }
-  60%  { color: transparent;               }
+  0%   { opacity: 0;                       }
+  60%  { opacity: 0;                       }
+  61%  { opacity: 1;                       }
   61%  { color: #b9eaf6;                   }
   62%  { transform: translate(0%, -120%);  }
   90%  { transform: translate(0%, 0%);     }
@@ -149,8 +150,9 @@ canvas {
 
 @-webkit-keyframes slide-down-glow-2 {
   0%   { transform: translate(0%, -888%);  }
-  0%   { color: transparent;               }
-  60%  { color: transparent;               }
+  0%   { opacity: 0;                       }
+  60%  { opacity: 0;                       }
+  61%  { opacity: 1;                       }
   61%  { color: #b9eaf6;                   }
   61%  { transform: translate(0%, -234%);  }
   90%  { transform: translate(0%, 0%);     }
@@ -258,4 +260,33 @@ canvas {
     -webkit-animation-delay: 0s;
       -webkit-animation-duration: .800s;
   -moz-animation: shadow 2s;
+}
+
+#click-to-start {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 36px;
+  /* visibility: hidden; */
+  color: #b9ecff;
+  position: absolute;
+  top: 340px;
+  left: 50%;
+  width: auto;
+  text-shadow: 0px 0px 8px #0081b1, 0px 0px 8px #0081b1, 0px 0px 8px #0081b1;
+  text-align: center;
+  transform: translateX(-144px);
+  animation: blink 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: step-end;
+  -webkit-animation-name: blink;
+    -webkit-animation-delay: 0s;
+      -webkit-animation-duration: 4s;
+  -moz-animation: blink 4s;
+}
+
+@-webkit-keyframes blink {
+    0%    { opacity: 1; }
+    25%   { opacity: 0; }
+    50%   { opacity: 1; }
+    75%   { opacity: 0; }
+    100%  { opacity: 1; }
 }

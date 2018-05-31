@@ -43,7 +43,6 @@ if (ballDirectionX > ballSpeed * 6) {
 	ballDirectionX = -ballSpeed * 6;
 }
 
-
 export const launchBall = () => {
   const canvas = document.getElementsByTagName("canvas")[0];
   if (ball.position.z === 0 &&
@@ -54,9 +53,11 @@ export const launchBall = () => {
      ballDirectionZ = 1;
      ballSpeed = 6;
    } else if (ball.position.z > 0 || ball.position.z <= -500) {
-     ball.position.z = 0;
+
      ball.position.x = 0;
      ball.position.y = 0;
+     ball.position.z = 0;
+
    } else if (ball.position.z <= -2 && ball.position.z > -24) {
      ballDirectionX = Math.random() * (6.01) - 3;
      ballDirectionY = Math.random() * (6.01) - 3;
@@ -126,8 +127,8 @@ export const ballPhysics = () => {
       ballSpeed += 1;
 
       const speedUpText = document.getElementById('speedup');
-      let y = canvas.offsetTop + 300 - ball.position.y;
-      let x = canvas.offsetLeft + 350 + ball.position.x;
+      let y = canvas.offsetTop + canvas.height/2 - 50 - ball.position.y;
+      let x = canvas.offsetLeft + canvas.width/2 + ball.position.x;
 
       speedUpText.style.top = `${y}px`;
       speedUpText.style.left= `${x}px`;
@@ -260,11 +261,11 @@ export const ballPhysics = () => {
 
     setTimeout(function(){
       crazyAf.style.visibility = "hidden";
-    },4000);
+    },3600);
 
     setTimeout(function(){
       ballSpeed = 11;
-    },4400);
+    },4000);
   }
 
 };

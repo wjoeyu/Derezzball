@@ -16,12 +16,12 @@ export const rinzler = new THREE.Mesh( geometry, rinzler_material );
 export const discController = (e) => {
   const canvas = document.getElementsByTagName("canvas")[0];
 
-  let relativeX = e.clientX - canvas.offsetLeft-350;
+  let relativeX = e.clientX - canvas.offsetLeft-canvas.width/2;
   if(relativeX > -canvas.width/2 && relativeX < canvas.width/2) {
         disc.position.x = relativeX;
     }
 
-  let relativeY = e.clientY - canvas.offsetTop-350;
+  let relativeY = e.clientY - canvas.offsetTop-canvas.height/2;
   if(relativeY > -canvas.height/2 && relativeY < canvas.height/2) {
         disc.position.y = -(relativeY);
     }
