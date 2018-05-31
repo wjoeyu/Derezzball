@@ -250,7 +250,7 @@ export const ballPhysics = () => {
     },248);
   }
 
-  if (ballSpeed === 15) {
+  if (ballSpeed === 10) {
     ballSpeed = 0;
     const crazyAf = document.getElementById('crazy');
 
@@ -263,7 +263,7 @@ export const ballPhysics = () => {
     },4000);
 
     setTimeout(function(){
-      ballSpeed = 16;
+      ballSpeed = 11;
     },4400);
   }
 
