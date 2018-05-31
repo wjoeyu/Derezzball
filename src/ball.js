@@ -43,7 +43,9 @@ if (ballDirectionX > ballSpeed * 6) {
 	ballDirectionX = -ballSpeed * 6;
 }
 
+
 export const launchBall = () => {
+  const canvas = document.getElementsByTagName("canvas")[0];
   if (ball.position.z === 0 &&
     ball.position.x === 0 &&
     ball.position.y === 0) {
@@ -56,14 +58,29 @@ export const launchBall = () => {
      ball.position.x = 0;
      ball.position.y = 0;
    } else if (ball.position.z <= -2 && ball.position.z > -24) {
-     ballDirectionX = Math.random() * (4.01) - 2;
-     ballDirectionY = Math.random() * (4.01) - 2;
+     ballDirectionX = Math.random() * (8.01) - 4;
+     ballDirectionY = Math.random() * (8.01) - 4;
      ballDirectionZ = 1;
-     console.log("DEREZZBALL!");
+
+  //if the player clicks the mouse when the ball hits the disc, a derezzball,
+  //a ball with a random direction is created.
+
+     const derezzb = document.getElementById('derezzball');
+     let y = canvas.offsetTop + 276 - ball.position.y;
+     let x = canvas.offsetLeft + 350 + ball.position.x;
+
+     derezzb.style.top = `${y}px`;
+     derezzb.style.left= `${x}px`;
+     derezzb.style.visibility = "visible";
+     setTimeout(function(){
+       derezzb.style.visibility = "hidden";
+     },888);
+
    }
 };
 
 export const ballPhysics = () => {
+  const canvas = document.getElementsByTagName("canvas")[0];
   ball.rotation.y += 0.02;
 	ball.rotation.x += 0.02;
 	ball.position.x += ballDirectionX * ballSpeed;
@@ -96,6 +113,8 @@ export const ballPhysics = () => {
 	    ballDirectionZ = -ballDirectionZ;
 	}
 
+// If the ball hits the center of disc, speed increases by 1.
+
   if (ball.position.z === 0 && (
     Math.sqrt((
       Math.pow((disc.position.x-ball.position.x),2) +
@@ -105,8 +124,22 @@ export const ballPhysics = () => {
       ballDirectionZ === 1 && ballSpeed !== 0
     )) {
       ballSpeed += 1;
-      console.log(`speedup to ${ballSpeed}!`);
+
+      const speedUpText = document.getElementById('speedup');
+      let y = canvas.offsetTop + 300 - ball.position.y;
+      let x = canvas.offsetLeft + 350 + ball.position.x;
+
+      speedUpText.style.top = `${y}px`;
+      speedUpText.style.left= `${x}px`;
+      while (speedUpText.firstChild) speedUpText.removeChild(speedUpText.firstChild);
+      speedUpText.style.visibility = "visible";
+      speedUpText.innerHTML=`SPEED UP TO: ${ballSpeed}!`;
+      setTimeout(function(){
+        speedUpText.style.visibility = "hidden";
+      },888);
   }
+
+// rinzler ball bounce back
 
 	if (ball.position.z <= -500 && (
     Math.sqrt((
@@ -136,72 +169,98 @@ export const ballPhysics = () => {
     ballWin.position.y = ball.position.y;
   }
 
-  // Ball deflection logic
-  if (ball.position.z === 0 && (
-    Math.sqrt((
+  // Ball sharp-angle-hit logic
+
+  if (ball.position.z === 0 && ballSpeed !== 0 &&
+    (Math.sqrt((
       Math.pow((disc.position.x-ball.position.x),2) +
       Math.pow((disc.position.y-ball.position.y),2)
-    )) < 90 && (
-      Math.sqrt((
+      )) < 90 &&
+    (Math.sqrt((
       Math.pow((disc.position.x-ball.position.x),2) +
       Math.pow((disc.position.y-ball.position.y),2)
-    )) >= 66
-    )
-    )) {
-      if (ball.position.x > disc.position.x && ball.position.y > disc.position.y) {
-        if (ballDirectionX < 0) {
-          ballDirectionX = -ballDirectionX * 2.2;
-        } else {
-          ballDirectionX = ballDirectionX * 2.2;
-        }
-        if (ballDirectionY < 0) {
-          ballDirectionY = -ballDirectionY * 2.2;
-        } else {
-          ballDirectionY = ballDirectionY * 2.2;
-        }
-        console.log("SHARP TOP RIGHT!");
+      )) >= 66))
+    ){
+    if (ball.position.x > disc.position.x && ball.position.y > disc.position.y) {
+      if (ballDirectionX < 0) {
+        ballDirectionX = -ballDirectionX * 2.2;
+      } else {
+        ballDirectionX = ballDirectionX * 2.2;
       }
-      if (ball.position.x > disc.position.x && ball.position.y < disc.position.y) {
-        if (ballDirectionX < 0) {
-          ballDirectionX = -ballDirectionX * 2.2;
-        } else {
-          ballDirectionX = ballDirectionX * 2.2;
-        }
-        if (ballDirectionY < 0) {
-          ballDirectionY = ballDirectionY * 2.2;
-        } else {
-          ballDirectionY = -ballDirectionY * 2.2;
-        }
-        console.log("SHARP BOTTOM RIGHT!");
-      }
-      if (ball.position.x < disc.position.x && ball.position.y > disc.position.y) {
-        if (ballDirectionX < 0) {
-          ballDirectionX = ballDirectionX * 2.2;
-        } else {
-          ballDirectionX = -ballDirectionX * 2.2;
-        }
-        if (ballDirectionY < 0) {
-          ballDirectionY = -ballDirectionY * 2.2;
-        } else {
-          ballDirectionY = ballDirectionY * 2.2;
-        }
-        console.log("SHARP TOP LEFT!");
-
-      }
-      if (ball.position.x < disc.position.x && ball.position.y < disc.position.y) {
-        if (ballDirectionX < 0) {
-          ballDirectionX = ballDirectionX * 2.2;
-        } else {
-          ballDirectionX = -ballDirectionX * 2.2;
-        }
-        if (ballDirectionY < 0) {
-          ballDirectionY = ballDirectionY * 2.2;
-        } else {
-          ballDirectionY = -ballDirectionY * 2.2;
-        }
-        console.log("SHARP BOTTOM LEFT!");
-
+      if (ballDirectionY < 0) {
+        ballDirectionY = -ballDirectionY * 2.2;
+      } else {
+        ballDirectionY = ballDirectionY * 2.2;
       }
     }
+
+    if (ball.position.x > disc.position.x && ball.position.y < disc.position.y) {
+      if (ballDirectionX < 0) {
+        ballDirectionX = -ballDirectionX * 2.2;
+      } else {
+        ballDirectionX = ballDirectionX * 2.2;
+      }
+      if (ballDirectionY < 0) {
+        ballDirectionY = ballDirectionY * 2.2;
+      } else {
+        ballDirectionY = -ballDirectionY * 2.2;
+      }
+    }
+
+    if (ball.position.x < disc.position.x && ball.position.y > disc.position.y) {
+      if (ballDirectionX < 0) {
+        ballDirectionX = ballDirectionX * 2.2;
+      } else {
+        ballDirectionX = -ballDirectionX * 2.2;
+      }
+      if (ballDirectionY < 0) {
+        ballDirectionY = -ballDirectionY * 2.2;
+      } else {
+        ballDirectionY = ballDirectionY * 2.2;
+      }
+    }
+
+    if (ball.position.x < disc.position.x && ball.position.y < disc.position.y) {
+      if (ballDirectionX < 0) {
+        ballDirectionX = ballDirectionX * 2.2;
+      } else {
+        ballDirectionX = -ballDirectionX * 2.2;
+      }
+      if (ballDirectionY < 0) {
+        ballDirectionY = ballDirectionY * 2.2;
+      } else {
+        ballDirectionY = -ballDirectionY * 2.2;
+      }
+    }
+
+    const sharpAf = document.getElementById('sharp');
+    let y = canvas.offsetTop + 324 - ball.position.y;
+    let x = canvas.offsetLeft + 350 + ball.position.x;
+
+    sharpAf.style.top = `${y}px`;
+    sharpAf.style.left= `${x}px`;
+    sharpAf.style.visibility = "visible";
+    setTimeout(function(){
+      sharpAf.style.visibility = "hidden";
+    },888);
+
+    disc.scale.set(1.4,1.4,1);
+    setTimeout(function(){
+      disc.scale.set(1,1,1);
+    },248);
+  }
+
+  if (ballSpeed === 20) {
+    const crazyAf = document.getElementById('crazy');
+    let y = canvas.offsetTop + 324 - ball.position.y;
+    let x = canvas.offsetLeft + 350 + ball.position.x;
+
+    sharpaf.style.top = `${y}px`;
+    sharpaf.style.left= `${x}px`;
+    sharpaf.style.visibility = "visible";
+    setTimeout(function(){
+      sharpaf.style.visibility = "hidden";
+    },888);
+  }
 
 };
