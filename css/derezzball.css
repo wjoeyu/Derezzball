@@ -59,11 +59,11 @@ canvas {
   transition: box-shadow .24s ease-in-out;
     -moz-transition: box-shadow .24s ease-in-out;
     -webkit-transition: box-shadow .24s ease-in-out;
-  animation: slide-down-glow 7.2s;
+  animation: slide-down-glow 3s;
     -webkit-animation-name: slide-down-glow;
       -webkit-animation-delay: 0s;
-        -webkit-animation-duration: 7.2s;
-    -moz-animation: slide-down-glow 7.2s;
+        -webkit-animation-duration: 3s;
+    -moz-animation: slide-down-glow 3s;
 }
 
 
@@ -101,11 +101,11 @@ canvas {
   transition: text-shadow .24s ease-in-out;
     -moz-transition: text-shadow .24s ease-in-out;
     -webkit-transition: text-shadow .24s ease-in-out;
-  animation: slide-down-glow-1 10s;
+  animation: slide-down-glow-1 4.166s;
     -webkit-animation-name: slide-down-glow-1;
       -webkit-animation-delay: 0s;
-        -webkit-animation-duration: 10s;
-    -moz-animation: slide-down-glow-1 10s;
+        -webkit-animation-duration: 4.166s;
+    -moz-animation: slide-down-glow-1 4.166s;
 }
 
 @-webkit-keyframes slide-down-glow-1 {
@@ -140,11 +140,11 @@ canvas {
   transition: text-shadow .24s ease-in-out;
     -moz-transition: text-shadow .24s ease-in-out;
     -webkit-transition: text-shadow .24s ease-in-out;
-  animation: slide-down-glow-2 10s;
+  animation: slide-down-glow-2 4.166s;
     -webkit-animation-name: slide-down-glow-2;
       -webkit-animation-delay: 0s;
-        -webkit-animation-duration: 10s;
-    -moz-animation: slide-down-glow-2 10s;
+        -webkit-animation-duration: 4.166s;
+    -moz-animation: slide-down-glow-2 4.166s;
 }
 
 @-webkit-keyframes slide-down-glow-2 {
@@ -175,7 +175,7 @@ canvas {
 
 #derezzball {
   font-family: 'Press Start 2P', cursive;
-  font-size: 24px;
+  font-size: 36px;
   color: orange;
   position: absolute;
   width: auto;
@@ -233,6 +233,7 @@ canvas {
   top: 463px;
   left: 50%;
   transform: translate(-251px, -221px);
+  visibility: hidden;
   animation: shadow 2s;
   animation-iteration-count: infinite;
   -webkit-animation-name: shadow;

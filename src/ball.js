@@ -58,8 +58,8 @@ export const launchBall = () => {
      ball.position.x = 0;
      ball.position.y = 0;
    } else if (ball.position.z <= -2 && ball.position.z > -24) {
-     ballDirectionX = Math.random() * (8.01) - 4;
-     ballDirectionY = Math.random() * (8.01) - 4;
+     ballDirectionX = Math.random() * (6.01) - 3;
+     ballDirectionY = Math.random() * (6.01) - 3;
      ballDirectionZ = 1;
 
   //if the player clicks the mouse when the ball hits the disc, a derezzball,
@@ -250,17 +250,21 @@ export const ballPhysics = () => {
     },248);
   }
 
-  if (ballSpeed === 20) {
+  if (ballSpeed === 15) {
+    ballSpeed = 0;
     const crazyAf = document.getElementById('crazy');
-    let y = canvas.offsetTop + 324 - ball.position.y;
-    let x = canvas.offsetLeft + 350 + ball.position.x;
 
-    sharpaf.style.top = `${y}px`;
-    sharpaf.style.left= `${x}px`;
-    sharpaf.style.visibility = "visible";
     setTimeout(function(){
-      sharpaf.style.visibility = "hidden";
+      crazyAf.style.visibility = "visible";
     },888);
+
+    setTimeout(function(){
+      crazyAf.style.visibility = "hidden";
+    },4000);
+
+    setTimeout(function(){
+      ballSpeed = 16;
+    },4400);
   }
 
 };
