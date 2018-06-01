@@ -269,8 +269,8 @@ canvas {
 
 #click-to-start {
   display: block;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 36px;
+  font-family: 'Audiowide', cursive;
+  font-size: 48px;
   color: #b9ecff;
   position: absolute;
   line-height: 220px;
@@ -280,7 +280,7 @@ canvas {
   left: 0;
   right: 0;
   width: 900px;
-  text-shadow: 0px 0px 8px #0081b1, 0px 0px 8px #0081b1, 0px 0px 8px #0081b1;
+  text-shadow: 0px 0px 8px #0081b1, 0px 0px 8px #0081b1, 0px 0px 16px #0081b1;
   text-align: center;
   animation: blink 4s;
   animation-iteration-count: infinite;
@@ -292,18 +292,19 @@ canvas {
 }
 
 #click-to-reset {
-  z-index: 21;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 36px;
+  z-index: 19;
+  font-family: 'Audiowide', cursive;
+  font-size: 48px;
   color: #b9ecff;
   position: absolute;
-  top: 210px;
+  top: 352px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 48px;
   left: 0;
   right: 0;
   width: 900px;
-  text-shadow: 0px 0px 8px #0081b1, 0px 0px 8px #0081b1, 0px 0px 8px #0081b1;
+  text-shadow: 0px 0px 8px #0081b1, 0px 0px 8px #0081b1, 0px 0px 16px #0081b1;
   text-align: center;
   visibility: hidden;
   cursor: cell;
