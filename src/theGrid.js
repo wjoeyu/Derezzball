@@ -66,13 +66,16 @@ animate();
 
 document.body.appendChild(renderer.domElement);
 const screen = document.getElementsByTagName('canvas')[0];
-
 screen.addEventListener("click", () => {
-  document.getElementById('click-to-start').style.visibility = "hidden";
   scene.remove(ballLose);
   scene.remove(ballWin);
   scene.add(ball);
   launchBall();
+  document.getElementById('click-to-start').style.visibility = "hidden";
+  document.getElementById('click-to-reset').style.visibility = "hidden";
+  document.getElementById('ring-1').style.visibility = "hidden";
+  document.getElementById('ring-2').style.visibility = "hidden";
+  document.getElementById('ring-3').style.visibility = "hidden";
 });
 const joey = document.createElement('div');
 joey.classList.add('joey');

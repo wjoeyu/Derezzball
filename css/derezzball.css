@@ -7,6 +7,8 @@ body {
 html {
   height: 100vh;
   overflow: hidden;
+  width: 100%;
+  min-width: 891px;
 }
 
 canvas {
@@ -15,6 +17,8 @@ canvas {
   border: 2px solid yellow;
   box-shadow: inset 0px 0px 24px yellow;
   position: relative;
+  z-index: 20;
+  cursor: cell;
 }
 
 .title {
@@ -236,6 +240,7 @@ canvas {
   left: 50%;
   transform: translate(-251px, -221px);
   visibility: hidden;
+  z-index: 99;
   animation: shadow 2s;
   animation-iteration-count: infinite;
   -webkit-animation-name: shadow;
@@ -263,17 +268,45 @@ canvas {
 }
 
 #click-to-start {
+  display: block;
   font-family: 'Press Start 2P', cursive;
   font-size: 36px;
-  /* visibility: hidden; */
   color: #b9ecff;
   position: absolute;
-  top: 340px;
-  left: 50%;
-  width: auto;
+  line-height: 220px;
+  top: 245px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 900px;
   text-shadow: 0px 0px 8px #0081b1, 0px 0px 8px #0081b1, 0px 0px 8px #0081b1;
   text-align: center;
-  transform: translateX(-144px);
+  animation: blink 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: step-end;
+  -webkit-animation-name: blink;
+    -webkit-animation-delay: 0s;
+      -webkit-animation-duration: 4s;
+  -moz-animation: blink 4s;
+}
+
+#click-to-reset {
+  z-index: 21;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 36px;
+  color: #b9ecff;
+  position: absolute;
+  top: 210px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 900px;
+  text-shadow: 0px 0px 8px #0081b1, 0px 0px 8px #0081b1, 0px 0px 8px #0081b1;
+  text-align: center;
+  visibility: hidden;
+  cursor: cell;
   animation: blink 4s;
   animation-iteration-count: infinite;
   animation-timing-function: step-end;
@@ -289,4 +322,107 @@ canvas {
     50%   { opacity: 1; }
     75%   { opacity: 0; }
     100%  { opacity: 1; }
+}
+
+#ring-1-wrapper {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  visibility: visible;
+  width: 893px;
+  top: 410px;
+  left: 0;
+  right: 0;
+}
+#ring-2-wrapper {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  visibility: visible;
+  width: 893px;
+  top: 400px;
+  left: 0;
+  right: 0;
+}
+#ring-3-wrapper {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  visibility: visible;
+  width: 893px;
+  top: 390px;
+  left: 0;
+  right: 0;
+}
+
+#ring-1 {
+  border: 10px solid #b9ecff;
+  margin: auto;
+  height: 88px;
+  width: 88px;
+  border-radius: 88px;
+  box-shadow: 0px 0px 16px #0081b1, 0px 0px 16px #0081b1;
+  animation: blink1 .7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-name: blink1;
+    -webkit-animation-delay: 0s;
+      -webkit-animation-duration: .7s;
+  -moz-animation: blink1 .7s;
+  }
+
+@-webkit-keyframes blink1 {
+  0%   { opacity: 0 }
+  25%  { opacity: 0 }
+  50%  { opacity: 0 }
+  75%  { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+#ring-2 {
+  border: 10px solid #b9ecff;
+  margin: auto;
+  height: 108px;
+  width: 108px;
+  border-radius: 100px;
+  box-shadow: 0px 0px 16px #0081b1, 0px 0px 16px #0081b1;
+  animation: blink2 .7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-name: blink2;
+    -webkit-animation-delay: 0s;
+      -webkit-animation-duration: .7s;
+  -moz-animation: blink2 .7s;
+}
+
+@-webkit-keyframes blink2 {
+  0%   { opacity: 0 }
+  25%  { opacity: 0 }
+  50%  { opacity: 1 }
+  75%  { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+#ring-3 {
+  border: 10px solid #b9ecff;
+  margin: auto;
+  height: 128px;
+  width: 128px;
+  border-radius: 120px;
+  box-shadow: 0px 0px 16px #0081b1, 0px 0px 16px #0081b1;
+  animation: blink3 .7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-name: blink3;
+    -webkit-animation-delay: 0s;
+      -webkit-animation-duration: .7s;
+  -moz-animation: blink3 .7s;
+}
+
+@-webkit-keyframes blink3 {
+  0%   { opacity: 0 }
+  25%  { opacity: 1 }
+  50%  { opacity: 0 }
+  75%  { opacity: 0 }
+  100% { opacity: 0 }
 }

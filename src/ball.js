@@ -58,9 +58,9 @@ export const launchBall = () => {
      ball.position.y = 0;
      ball.position.z = 0;
 
-   } else if (ball.position.z <= -2 && ball.position.z > -24) {
-     ballDirectionX = Math.random() * (6.01) - 3;
-     ballDirectionY = Math.random() * (6.01) - 3;
+   } else if (ball.position.z <= -2 && ball.position.z > -30) {
+     ballDirectionX = Math.random() * (5.01) - 2.5;
+     ballDirectionY = Math.random() * (5.01) - 2.5;
      ballDirectionZ = 1;
 
   //if the player clicks the mouse when the ball hits the disc, a derezzball,
@@ -156,6 +156,7 @@ export const ballPhysics = () => {
     ballLose.position.z = 0;
     ballLose.position.x = ball.position.x;
     ballLose.position.y = ball.position.y;
+    document.getElementById('click-to-reset').style.visibility = "visible";
   }
 
   if (ball.position.z < -500 && (
@@ -168,6 +169,7 @@ export const ballPhysics = () => {
     ballWin.position.z = -500;
     ballWin.position.x = ball.position.x;
     ballWin.position.y = ball.position.y;
+    document.getElementById('click-to-reset').style.visibility = "visible";
   }
 
   // Ball sharp-angle-hit logic
@@ -267,5 +269,4 @@ export const ballPhysics = () => {
       ballSpeed = 11;
     },4000);
   }
-
 };
