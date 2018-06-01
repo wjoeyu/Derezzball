@@ -361,14 +361,14 @@ canvas {
   height: 88px;
   width: 88px;
   border-radius: 88px;
-  box-shadow: 0px 0px 16px #0081b1, 0px 0px 16px #0081b1;
-  animation: blink1 .7s;
+  box-shadow: 0px 0px 16px #0081b1, 0px 0px 16px #0081b1, inset 0px 0px 16px #0081b1, inset 0px 0px 16px #0081b1;
+  animation: blink1 3s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease;
   -webkit-animation-name: blink1;
     -webkit-animation-delay: 0s;
-      -webkit-animation-duration: .7s;
-  -moz-animation: blink1 .7s;
+      -webkit-animation-duration: 3s;
+  -moz-animation: blink1 3s;
   }
 
 @-webkit-keyframes blink1 {
@@ -385,14 +385,14 @@ canvas {
   height: 108px;
   width: 108px;
   border-radius: 100px;
-  box-shadow: 0px 0px 16px #0081b1, 0px 0px 16px #0081b1;
-  animation: blink2 .7s;
+  box-shadow: 0px 0px 16px #0081b1, 0px 0px 16px #0081b1, inset 0px 0px 16px #0081b1, inset 0px 0px 16px #0081b1;
+  animation: blink2 3s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease;
   -webkit-animation-name: blink2;
     -webkit-animation-delay: 0s;
-      -webkit-animation-duration: .7s;
-  -moz-animation: blink2 .7s;
+      -webkit-animation-duration: 3s;
+  -moz-animation: blink2 3s;
 }
 
 @-webkit-keyframes blink2 {
@@ -409,14 +409,14 @@ canvas {
   height: 128px;
   width: 128px;
   border-radius: 120px;
-  box-shadow: 0px 0px 16px #0081b1, 0px 0px 16px #0081b1;
-  animation: blink3 .7s;
+  box-shadow: 0px 0px 16px #0081b1, 0px 0px 16px #0081b1, inset 0px 0px 16px #0081b1, inset 0px 0px 16px #0081b1;
+  animation: blink3 3s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease;
   -webkit-animation-name: blink3;
     -webkit-animation-delay: 0s;
-      -webkit-animation-duration: .7s;
-  -moz-animation: blink3 .7s;
+      -webkit-animation-duration: 3s;
+  -moz-animation: blink3 3s;
 }
 
 @-webkit-keyframes blink3 {
