@@ -201,7 +201,7 @@ canvas {
   position: absolute;
   width: auto;
   text-align: center;
-  /* visibility: hidden; */
+  visibility: hidden;
   transform: translateX(-143px);
   animation: shadow 2s;
   animation-iteration-count: infinite;
@@ -217,7 +217,7 @@ canvas {
   position: absolute;
   width: 400px;
   text-align: center;
-  /* visibility: hidden; */
+  visibility: hidden;
   transform: translateX(-200px);
   animation: shadow 2s;
   animation-iteration-count: infinite;
@@ -233,7 +233,7 @@ canvas {
   position: absolute;
   width: auto;
   text-align: center;
-  /* visibility: hidden; */
+  visibility: hidden;
   transform: translateX(-52px);
   animation: shadow 2s;
   animation-iteration-count: infinite;
