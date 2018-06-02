@@ -24,7 +24,7 @@ The app uses vanilla JavaScript DOM manipulation for game controls and game acti
 
 With the simple geometric calculation of distance between the center of the ball and the user disc on impact, I was able to create different ball behaviors based on where the disc struck the ball. Here is the code for speeding up the ball when it hits the middle of the user's disc:
 
-```
+```JavaScript
 // ball.js
 
 if (ball.position.z === 0 && (
@@ -44,7 +44,7 @@ The game action of launching the ball back at the AI at a sharper angle is imple
 
 What fun is creating a unique and different ball action if the user doesn't know about it?! With the use of simple vanilla JS DOM manipulation, I selected pre-made HTML elements with the specific ball action text and made them visible at the position the user deflects the ball. The following code is within the same conditional block of code as above. Here I am popping up the in-game alert of "SPEED UP TO: (BALLSPEED)!" when the user successfully speeds up the ball.:
 
-```
+```JavaScript
 // ball.js
 
   ...
