@@ -70,7 +70,7 @@ What fun is creating a unique and different ball action if the user doesn't know
 ```
 ### Rinzler (AI Opponent Logic)
 
-Rinzler, the opponent disc on the other side of the cube, follows the x and y positions of the ball with linear interpolation. I enfore a limit to the max speed of Rinzler in order to make it beatable:
+Rinzler, the opponent disc on the other side of the cube, follows the x and y positions of the ball with linear interpolation. I enforce a limit to the max speed of Rinzler in order to make it beatable:
 
 ```JavaScript
 // disc.js
@@ -116,8 +116,6 @@ export const rinzlerAI = () => {
 };
 
 ```
-
-### Rinzler (AI Player)
 
 ## Future Features
 
