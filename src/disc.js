@@ -34,37 +34,35 @@ export const rinzlerAI = () => {
   rinzlerDirectionY = (ball.position.y - rinzler.position.y);
   rinzlerDirectionX = (ball.position.x - rinzler.position.x);
 
-  	if (Math.abs(rinzlerDirectionX) <= rinzlerSpeed)
-  	{
-  		rinzler.position.x += rinzlerDirectionX;
-  	}
-  	else
-  	{
-  		if (rinzlerDirectionX > rinzlerSpeed)
-  		{
-  			rinzler.position.x += rinzlerSpeed;
-  		}
-  		else if (rinzlerDirectionX < -rinzlerSpeed)
-  		{
-  			rinzler.position.x -= rinzlerSpeed;
-  		}
-  	}
+	if (Math.abs(rinzlerDirectionX) <= rinzlerSpeed)
+	{
+		rinzler.position.x += rinzlerDirectionX;
+	}
+	else
+	{
+		if (rinzlerDirectionX > rinzlerSpeed)
+		{
+			rinzler.position.x += rinzlerSpeed;
+		}
+		else if (rinzlerDirectionX < -rinzlerSpeed)
+		{
+			rinzler.position.x -= rinzlerSpeed;
+		}
+	}
 
-  	if (Math.abs(rinzlerDirectionY) <= rinzlerSpeed)
-  	{
-  		rinzler.position.y += rinzlerDirectionY;
-  	}
-  	else
-  	{
-  		if (rinzlerDirectionY > rinzlerSpeed)
-  		{
-  			rinzler.position.y += rinzlerSpeed;
-  		}
-  		else if (rinzlerDirectionY < -rinzlerSpeed)
-  		{
-  			rinzler.position.y -= rinzlerSpeed;
-  		}
-  	}
-
-
+	if (Math.abs(rinzlerDirectionY) <= rinzlerSpeed)
+	{
+		rinzler.position.y += rinzlerDirectionY;
+	}
+	else
+	{
+		if (rinzlerDirectionY > rinzlerSpeed)
+		{
+			rinzler.position.y += rinzlerSpeed;
+		}
+		else if (rinzlerDirectionY < -rinzlerSpeed)
+		{
+			rinzler.position.y -= rinzlerSpeed;
+		}
+	}
 };
