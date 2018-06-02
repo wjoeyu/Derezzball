@@ -1,6 +1,14 @@
 ## Derezzball
 
-This is game inspired by the movie Tron and the game Pong. It will be played in a 3 dimensional cube with the AI opponent on the opposite wall. The first player to successfully hit the ball on their opponents wall wins a point. Game to 1. It's do or deresolution. This is Derezzball.
+This is a game inspired by the movie Tron and the game Pong. It will be played in a 3 dimensional cube with the AI opponent on the opposite wall. The first player to successfully hit the ball on their opponents wall wins a point. Game to 1. It's do or deresolution. This is Derezzball.
+
+The app uses vanilla JavaScript DOM manipulation for game controls and game action prompts. 3-D objects were built using the
+[three.js](https://threejs.org/) library.
+
+
+[Derezzball Live Demo](http://www.joey-wu.com/Derezzball/)
+
+![images](https://github.com/wjoeyu/mamba/blob/master/wireframes/mamba_demo.gif)
 
 ### Functionality and MVP
 
