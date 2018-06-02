@@ -8,7 +8,7 @@ The app uses vanilla JavaScript DOM manipulation for game controls and game acti
 
 [Derezzball Live Demo](http://www.joey-wu.com/Derezzball/)
 
-![images](https://github.com/wjoeyu/mamba/blob/master/wireframes/mamba_demo.gif)
+![images](https://github.com/wjoeyu/Derezzball/blob/master/images/derezzball.gif)
 
 ### Functionality and MVP
 
