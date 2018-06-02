@@ -26,10 +26,10 @@ This project will be implemented with the following technologies:
 
 In addition to the entry file, there will be three scripts involved in the project:
 
-`ball.js`: This script will handle the collision logic and special moves of the ball object.
-`gamecube.js`: This script will handle the rendering of the board.
-`disk.js`: This script will handle the logic of the AI player and the game controls for the user.
-`light.js`: This file will create a light source for the game if 3d objects with lambertMaterials (textures that can receive lighting effects).
+- `ball.js`: This script will handle the collision logic and special moves of the ball object.
+- `gamecube.js`: This script will handle the rendering of the board.
+- `disk.js`: This script will handle the logic of the AI player and the game controls for the user.
+- `light.js`: This file will create a light source for the game if 3d objects with lambertMaterials (textures that can receive lighting effects).
 
 ### Implementation Timeline
 
