@@ -1,12 +1,11 @@
 ## Derezzball
 
-This is game inspired by the movie Tron and the game Pong. It will be played in a 3 dimensional cube with the AI opponent on the opposite wall. The first player to successfully hit the ball on their opponents wall wins a point. Game to 1. It's do or deresolution. This is Derezzball.
+This is game inspired by the movie Tron and the game Pong. It will be played in a 3 dimensional cube with the AI opponent on the opposite wall. The first player to successfully hit the ball on their opponent's wall wins a point. Game to 1. It's do or deresolution. This is Derezzball.
 
 ### Functionality and MVP
 
 - [ ] Users will be able to control their paddle through their mouse movements.
 - [ ] Play an AI player
-- [ ] Choose their paddle color.
 
 In addition, this project will include:
 - [ ] A production README
@@ -14,7 +13,7 @@ In addition, this project will include:
 
 ### Wireframes
 
-This app will consist of a single screen. Their are no on screen controls besides a a button to start the game. It should be intuitive enough where a player will see they control the digital paddle on mouseover that their paddle will be controlled with their mouse movements.
+This app will consist of a single screen. Their are no on screen controls, but will have prompts to start and reset game with mouse clicks. It should be intuitive enough where a player will see they control the digital paddle on mouseover that their paddle will be controlled with their mouse movements.
 
 ![wireframes](https://github.com/wjoeyu/Derezzball/blob/master/wireframes/Derezzball.png)
 
@@ -27,8 +26,10 @@ This project will be implemented with the following technologies:
 
 In addition to the entry file, there will be three scripts involved in the project:
 
-`Ball_Cube.js`: This script will handle the rendering of the board and the game ball
-`Rinzler.js`: This script will handle the logic of the AI player
+`ball.js`: This script will handle the collision logic and special moves of the ball object.
+`gamecube.js`: This script will handle the rendering of the board.
+`disk.js`: This script will handle the logic of the AI player and the game controls for the user.
+`light.js`: This file will create a light source for the game if 3d objects with lambertMaterials (textures that can receive lighting effects).
 
 ### Implementation Timeline
 
