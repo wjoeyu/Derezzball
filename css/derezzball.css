@@ -344,7 +344,6 @@ canvas {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  visibility: visible;
   width: 893px;
   top: 410px;
   left: 0;
@@ -354,7 +353,6 @@ canvas {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  visibility: visible;
   width: 893px;
   top: 400px;
   left: 0;
@@ -364,7 +362,6 @@ canvas {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  visibility: visible;
   width: 893px;
   top: 390px;
   left: 0;
