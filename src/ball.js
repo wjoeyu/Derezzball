@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { disc, rinzler } from './disc';
 
 const sphereGeometry = new THREE.SphereGeometry( 40, 16, 16 );
-const material = new THREE.MeshLambertMaterial( {color: 0xb9eaf6} );
+// const material = new THREE.MeshLambertMaterial( {color: 0xb9eaf6} );
 const wireframe_material = new THREE.MeshBasicMaterial( { color: 0xb9eaf6, wireframe: true } );
 const win_material = new THREE.MeshBasicMaterial( { color: 0x00d424, wireframe: true } );
 const lose_material = new THREE.MeshBasicMaterial( { color: 0xff0d00, wireframe: true } );
@@ -24,7 +24,7 @@ square.vertices.push(new THREE.Vector3(0, 0, 0));
 square.faces.push(new THREE.Face3(0, 1, 2));
 square.faces.push(new THREE.Face3(0, 3, 2));
 
-export const ballTracker = new THREE.Line(square, new THREE.LineBasicMaterial({ color: 0xffff00, opacity: 0.5 }));
+export const ballTracker = new THREE.Line(square, new THREE.LineBasicMaterial({ color: 0xffff00, opacity: 1 }));
 
 let ballDirectionX = 0;
 let ballDirectionY = 0;
