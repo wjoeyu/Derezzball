@@ -35,10 +35,24 @@ canvas {
   -webkit-animation-name: shadow;
     -webkit-animation-delay: 1s;
       -webkit-animation-duration: 2s;
-  -moz-animation: shadow 2s;
+  -moz-animation: shadow;
+    -moz-animation-delay: 1s;
+      -moz-animation-duration: 2s;
 }
 
+@keyframes shadow {
+    0%    { text-shadow:  3px  3px #cbecf5; }
+    25%   { text-shadow: -3px -3px yellow;  }
+    75%   { text-shadow:  3px -3px #cbecf5; }
+    100%  { text-shadow: -3px  3px yellow;  }
+}
 @-webkit-keyframes shadow {
+    0%    { text-shadow:  3px  3px #cbecf5; }
+    25%   { text-shadow: -3px -3px yellow;  }
+    75%   { text-shadow:  3px -3px #cbecf5; }
+    100%  { text-shadow: -3px  3px yellow;  }
+}
+@-moz-keyframes shadow {
     0%    { text-shadow:  3px  3px #cbecf5; }
     25%   { text-shadow: -3px -3px yellow;  }
     75%   { text-shadow:  3px -3px #cbecf5; }
@@ -69,7 +83,6 @@ canvas {
         -webkit-animation-duration: 3s;
     -moz-animation: slide-down-glow 3s;
 }
-
 
 @-webkit-keyframes slide-down-glow {
   0%   { transform: translate(0%, -888%); }
@@ -224,9 +237,26 @@ canvas {
     -webkit-animation-delay: 0s;
       -webkit-animation-duration: 8s;
   -moz-animation: glow 8s;
+    -moz-animation-delay: 0s;
+      -moz-animation-duration: 8s;
+        -moz-animation-iteration-count: infinite;
 }
 
+@keyframes glow {
+    0%    { text-shadow: none; }
+    25%   { text-shadow: 0px 0px 4px #0081b1, 0px 0px 8px #0081b1; }
+    50%   { text-shadow: none; }
+    75%   { text-shadow: 0px 0px 4px #0081b1, 0px 0px 8px #0081b1;}
+    100%  { text-shadow: none; }
+}
 @-webkit-keyframes glow {
+    0%    { text-shadow: none; }
+    25%   { text-shadow: 0px 0px 4px #0081b1, 0px 0px 8px #0081b1; }
+    50%   { text-shadow: none; }
+    75%   { text-shadow: 0px 0px 4px #0081b1, 0px 0px 8px #0081b1;}
+    100%  { text-shadow: none; }
+}
+@-moz-keyframes glow {
     0%    { text-shadow: none; }
     25%   { text-shadow: 0px 0px 4px #0081b1, 0px 0px 8px #0081b1; }
     50%   { text-shadow: none; }
@@ -243,13 +273,17 @@ canvas {
   text-align: center;
   visibility: hidden;
   transform: translateX(-143px);
-  animation: shadow 2s;
+  animation: shadow .800s;
   animation-iteration-count: infinite;
   -webkit-animation-name: shadow;
     -webkit-animation-delay: 0s;
       -webkit-animation-duration: .800s;
-  -moz-animation: shadow 2s;
+  -moz-animation: shadow;
+    -moz-animation-delay: 1s;
+      -moz-animation-duration: .800s;
+        -moz-animation-iteration-count: infinite;
 }
+
 #speedup {
   font-family: 'Audiowide', cursive;
   font-size: 24px;
@@ -259,13 +293,60 @@ canvas {
   text-align: center;
   visibility: hidden;
   transform: translateX(-200px);
-  animation: shadow 2s;
+  animation: shadow .800s;
   animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
   -webkit-animation-name: shadow;
     -webkit-animation-delay: 0s;
       -webkit-animation-duration: .800s;
-  -moz-animation: shadow 2s;
+  -moz-animation: shadow;
+    -moz-animation-delay: 1s;
+      -moz-animation-duration: .800s;
+        -moz-animation-iteration-count: infinite;
 }
+
+/* @-webkit-keyframes speed {
+    0%    { text-shadow:  0px  0px 8px yellow; }
+    0%    { color: #cbecf5;                     }
+    0%    { transform: scale3d (1.2,1.2,1.2);              }
+    20%   { text-shadow:  0px  0px 8px yellow; }
+    20%   { color: #cbecf5;                     }
+    20%   { transform: perspective(500px) scale3d(1,1,1),translateZ(100px);                    }
+    40%   { text-shadow:  0px  0px 8px yellow; }
+    40%   { color: #cbecf5;                     }
+    40%   { transform: perspective(500px) scale3d(.8,.8,.8),translateZ(100px);                 }
+    60%   { text-shadow:  0px  0px 8px yellow; }
+    60%   { color: #cbecf5;                     }
+    60%   { transform: perspective(500px) scale3d(.6,.6,.6,translateZ(100px));                  }
+    80%   { text-shadow:  0px  0px 8px yellow; }
+    80%   { color: #cbecf5;                     }
+    80%   { transform: perspective(500px) scale3d(.4,.4,.4),translateZ(100px);                 }
+    100%  { text-shadow:  0px  0px 8px yellow; }
+    100%  { color: #cbecf5;                     }
+    100%  { transform: perspective(500px) scale3d(1.2,1.2,1.2),translateZ(100px);              }
+}
+@-moz-keyframes speed {
+    0%    { text-shadow:  0px  0px 8px yellow; }
+    0%    { color: #cbecf5;                     }
+    0%    { transform: scale3d (1.2,1.2,1.2);              }
+    20%   { text-shadow:  0px  0px 8px yellow; }
+    20%   { color: #cbecf5;                     }
+    20%   { transform: perspective(500px) scale3d(1,1,1),translateZ(100px);                    }
+    40%   { text-shadow:  0px  0px 8px yellow; }
+    40%   { color: #cbecf5;                     }
+    40%   { transform: perspective(500px) scale3d(.8,.8,.8),translateZ(100px);                 }
+    60%   { text-shadow:  0px  0px 8px yellow; }
+    60%   { color: #cbecf5;                     }
+    60%   { transform: perspective(500px) scale3d(.6,.6,.6,translateZ(100px));                  }
+    80%   { text-shadow:  0px  0px 8px yellow; }
+    80%   { color: #cbecf5;                     }
+    80%   { transform: perspective(500px) scale3d(.4,.4,.4),translateZ(100px);                 }
+    100%  { text-shadow:  0px  0px 8px yellow; }
+    100%  { color: #cbecf5;                     }
+    100%  { transform: perspective(500px) scale3d(1.2,1.2,1.2),translateZ(100px);              }
+} */
+
+
 #sharp {
   font-family: 'Audiowide', cursive;
   font-size: 24px;
@@ -275,15 +356,17 @@ canvas {
   text-align: center;
   visibility: hidden;
   transform: translateX(-52px);
-  animation: shadow 2s;
+  animation: shadow .800s;
   animation-iteration-count: infinite;
   -webkit-animation-name: shadow;
     -webkit-animation-delay: 0s;
       -webkit-animation-duration: .800s;
-  -moz-animation: shadow 2s;
-
-  top: 0px;
+  -moz-animation: shadow;
+    -moz-animation-delay: 1s;
+      -moz-animation-duration: .800s;
+        -moz-animation-iteration-count: infinite;
 }
+
 #crazy {
   font-family: 'Audiowide', cursive;
   font-size: 88px;
@@ -296,12 +379,15 @@ canvas {
   transform: translate(-251px, -221px);
   visibility: hidden;
   z-index: 99;
-  animation: shadow 2s;
+  animation: shadow .800s;
   animation-iteration-count: infinite;
   -webkit-animation-name: shadow;
     -webkit-animation-delay: 0s;
       -webkit-animation-duration: .800s;
-  -moz-animation: shadow 2s;
+  -moz-animation: shadow;
+    -moz-animation-delay: 1s;
+      -moz-animation-duration: .800s;
+        -moz-animation-iteration-count: infinite;
 }
 
 #derezzed {
@@ -314,12 +400,12 @@ canvas {
   text-align: center;
   left: 0px;
   visibility: hidden;
-  animation: shadow 2s;
+  animation: shadow .800s;
   animation-iteration-count: infinite;
   -webkit-animation-name: shadow;
     -webkit-animation-delay: 0s;
       -webkit-animation-duration: .800s;
-  -moz-animation: shadow 2s;
+  -moz-animation: shadow .800s;
 }
 
 #click-to-start {
@@ -344,7 +430,10 @@ canvas {
   -webkit-animation-name: blink;
     -webkit-animation-delay: 0s;
       -webkit-animation-duration: 4s;
-  -moz-animation: blink 4s;
+  -moz-animation: blink;
+    -moz-animation-delay: 0s;
+      -moz-animation-duration: 4s;
+        -moz-animation-iteration-count: infinite;
 }
 
 #click-to-reset {
@@ -370,10 +459,27 @@ canvas {
   -webkit-animation-name: blink;
     -webkit-animation-delay: 0s;
       -webkit-animation-duration: 4s;
-  -moz-animation: blink 4s;
+  -moz-animation: blink;
+    -moz-animation-delay: 0s;
+      -moz-animation-duration: 4s;
+        -moz-animation-iteration-count: infinite;
 }
 
+@keyframes blink {
+    0%    { opacity: 1; }
+    25%   { opacity: 0; }
+    50%   { opacity: 1; }
+    75%   { opacity: 0; }
+    100%  { opacity: 1; }
+}
 @-webkit-keyframes blink {
+    0%    { opacity: 1; }
+    25%   { opacity: 0; }
+    50%   { opacity: 1; }
+    75%   { opacity: 0; }
+    100%  { opacity: 1; }
+}
+@-moz-keyframes blink {
     0%    { opacity: 1; }
     25%   { opacity: 0; }
     50%   { opacity: 1; }
@@ -419,16 +525,35 @@ canvas {
   width: 88px;
   border-radius: 88px;
   box-shadow: 0px 0px 16px #0081b1, 0px 0px 16px #0081b1, inset 0px 0px 16px #0081b1, inset 0px 0px 16px #0081b1;
-  animation: blink1 4s;
-  animation-iteration-count: infinite;
+  animation: blink1;
+    animation-duration: 4s;
+      animation-delay: 0s;
+        animation-iteration-count: infinite;
   animation-timing-function: ease;
   -webkit-animation-name: blink1;
     -webkit-animation-delay: 0s;
       -webkit-animation-duration: 4s;
-  -moz-animation: blink1 4s;
+  -moz-animation: blink1;
+    -moz-animation-delay: 0s;
+      -moz-animation-duration: 4s;
+        -moz-animation-iteration-count: infinite;
   }
 
+@keyframes blink1 {
+  0%   { opacity: 0 }
+  25%  { opacity: 0 }
+  50%  { opacity: 0 }
+  75%  { opacity: 1 }
+  100% { opacity: 0 }
+}
 @-webkit-keyframes blink1 {
+  0%   { opacity: 0 }
+  25%  { opacity: 0 }
+  50%  { opacity: 0 }
+  75%  { opacity: 1 }
+  100% { opacity: 0 }
+}
+@-moz-keyframes blink1 {
   0%   { opacity: 0 }
   25%  { opacity: 0 }
   50%  { opacity: 0 }
@@ -449,10 +574,27 @@ canvas {
   -webkit-animation-name: blink2;
     -webkit-animation-delay: 0s;
       -webkit-animation-duration: 4s;
-  -moz-animation: blink2 4s;
+  -moz-animation: blink2;
+    -moz-animation-delay: 0s;
+      -moz-animation-duration: 4s;
+        -moz-animation-iteration-count: infinite;
 }
 
+@keyframes blink2 {
+  0%   { opacity: 0 }
+  25%  { opacity: 0 }
+  50%  { opacity: 1 }
+  75%  { opacity: 0 }
+  100% { opacity: 0 }
+}
 @-webkit-keyframes blink2 {
+  0%   { opacity: 0 }
+  25%  { opacity: 0 }
+  50%  { opacity: 1 }
+  75%  { opacity: 0 }
+  100% { opacity: 0 }
+}
+@-moz-keyframes blink2 {
   0%   { opacity: 0 }
   25%  { opacity: 0 }
   50%  { opacity: 1 }
@@ -473,10 +615,27 @@ canvas {
   -webkit-animation-name: blink3;
     -webkit-animation-delay: 0s;
       -webkit-animation-duration: 4s;
-  -moz-animation: blink3 4s;
+  -moz-animation: blink3;
+    -moz-animation-delay: 0s;
+      -moz-animation-duration: 4s;
+        -moz-animation-iteration-count: infinite;
 }
 
+@keyframes blink3 {
+  0%   { opacity: 0 }
+  25%  { opacity: 1 }
+  50%  { opacity: 0 }
+  75%  { opacity: 0 }
+  100% { opacity: 0 }
+}
 @-webkit-keyframes blink3 {
+  0%   { opacity: 0 }
+  25%  { opacity: 1 }
+  50%  { opacity: 0 }
+  75%  { opacity: 0 }
+  100% { opacity: 0 }
+}
+@-moz-keyframes blink3 {
   0%   { opacity: 0 }
   25%  { opacity: 1 }
   50%  { opacity: 0 }

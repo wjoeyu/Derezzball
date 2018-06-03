@@ -24,7 +24,7 @@ square.vertices.push(new THREE.Vector3(0, 0, 0));
 square.faces.push(new THREE.Face3(0, 1, 2));
 square.faces.push(new THREE.Face3(0, 3, 2));
 
-export const ballTracker = new THREE.Line(square, new THREE.LineBasicMaterial({ color: 0xffff00, opacity: 1 }));
+export const ballTracker = new THREE.Line(square, new THREE.LineBasicMaterial({ color: 0xffff00, linewidth: 2, opacity: 1 }));
 
 let ballDirectionX = 0;
 let ballDirectionY = 0;
