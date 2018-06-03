@@ -4,12 +4,12 @@ This is  a agame inspired by the movie Tron and the game Pong. It will be played
 
 ### Functionality and MVP
 
-- [ ] Users will be able to control their paddle through their mouse movements.
-- [ ] Play an AI player
+- [x] Users will be able to control their paddle through their mouse movements.
+- [x] Play an AI player
 
 In addition, this project will include:
-- [ ] A production README
-- [ ] My personal links.
+- [x] A production README
+- [x] My personal links.
 
 ### Wireframes
 
