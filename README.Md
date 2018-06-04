@@ -27,11 +27,13 @@ With the simple geometric calculation of distance between the center of the ball
 ```JavaScript
 // ball.js
 
+let DistanceFromDiscCenter = 24;
+
 if (ball.position.z === 0 && (
   Math.sqrt((
     Math.pow((disc.position.x-ball.position.x),2) +
     Math.pow((disc.position.y-ball.position.y),2)
-  )) < 24) && (ballDirectionZ === 1 && ballSpeed !== 0))
+  )) < DistanceFromDiscCenter) && (ballDirectionZ === 1 && ballSpeed !== 0))
   {
     ballSpeed += 1;
 

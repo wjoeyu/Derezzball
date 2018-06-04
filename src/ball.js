@@ -59,8 +59,8 @@ export const launchBall = () => {
      ball.position.z = 0;
 
    } else if (ball.position.z <= -2 && ball.position.z > -30) {
-     ballDirectionX = Math.random() * (5.01) - 2.5;
-     ballDirectionY = Math.random() * (5.01) - 2.5;
+     ballDirectionX = Math.random() * (4.01) - 2;
+     ballDirectionY = Math.random() * (4.01) - 2;
      ballDirectionZ = 1;
 
   //if the player clicks the mouse when the ball hits the disc, a derezzball,
@@ -115,19 +115,23 @@ export const ballPhysics = () => {
 	}
 
 // If the ball hits the center of disc, speed increases by 1.
-
+  let DistanceFromDiscCenter = 24;
   if (ball.position.z === 0 && (
     Math.sqrt((
       Math.pow((disc.position.x-ball.position.x),2) +
       Math.pow((disc.position.y-ball.position.y),2)
-    )) < 24
+    )) < DistanceFromDiscCenter
     ) && (
       ballDirectionZ === 1 && ballSpeed !== 0
     )) {
       ballSpeed += 1;
 
+      // const speedUpText = document.createElement('div');
+      // speedUpText.setAttribute("id", "speedup");
+      // document.body.appendChild(speedUpText);
+
       const speedUpText = document.getElementById('speedup');
-      let y = canvas.offsetTop + canvas.height/2 - 50 - ball.position.y;
+      let y = canvas.offsetTop + canvas.height/2 - 95 - ball.position.y;
       let x = canvas.offsetLeft + canvas.width/2 + ball.position.x;
 
       speedUpText.style.top = `${y}px`;
