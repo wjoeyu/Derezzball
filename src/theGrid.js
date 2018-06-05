@@ -19,7 +19,7 @@ cube.position.z = -250;
 
 ball.position.z = 0;
 ball.position.y = 0;
-camera.position.z = 500;
+camera.position.z = 460;
 
 ballTracker.position.z = 0;
 ballTracker.position.x = -333;
